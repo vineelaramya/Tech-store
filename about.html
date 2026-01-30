@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - TechStore</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.8em;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .cart-icon {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ff4757;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 0.75em;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 1.2em;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .about-section {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .about-section h2 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .about-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .story-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5em;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .value-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .value-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .value-card p {
+            color: #666;
+            font-size: 1em;
+        }
+
+        .team-section {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-member {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+            margin: 0 auto 20px;
+        }
+
+        .member-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .member-role {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .member-bio {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2em;
+            }
+
+            .story-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-section,
+            .team-section,
+            .stats-section {
+                padding: 40px 20px;
+            }
+
+            .about-section h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🛒 TechStore</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="cart-icon">
+                    <a href="cart.html">🛒 Cart</a>
+                    <span class="cart-count" id="cartCount">0</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>About TechStore</h1>
+        <p>Innovating the future of technology retail</p>
+    </section>
+
+    <div class="about-container">
+        <!-- Our Story -->
+        <section class="about-section">
+            <h2>Our Story</h2>
+            <div class="story-grid">
+                <div>
+                    <p>Founded in 2015, TechStore began with a simple mission: to make cutting-edge technology accessible to everyone. What started as a small online shop has grown into one of the most trusted names in electronics retail.</p>
+                    
+                    <p>We believe that technology should enhance lives, not complicate them. That's why we carefully curate our product selection, ensuring that every item we offer meets our high standards for quality, innovation, and value.</p>
+                    
+                    <p>Today, we serve thousands of customers worldwide, offering everything from the latest smartphones and laptops to innovative smart home devices and accessories. Our commitment to excellence and customer satisfaction remains at the heart of everything we do.</p>
+                </div>
+                <div class="story-image">
+                    🚀
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <h2 style="color: white; text-align: center; font-size: 2.5em; margin-bottom: 20px;">TechStore By Numbers</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Products</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Values -->
+        <section class="about-section">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Quality First</h3>
+                    <p>We only offer products that meet our rigorous quality standards and deliver exceptional value.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Innovation</h3>
+                    <p>Staying ahead of technology trends to bring you the latest and greatest products.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Customer Focus</h3>
+                    <p>Your satisfaction is our top priority. We're here to help every step of the way.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌍</div>
+                    <h3>Sustainability</h3>
+                    <p>Committed to eco-friendly practices and reducing our environmental footprint.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🔒</div>
+                    <h3>Trust & Security</h3>
+                    <p>Your data and transactions are protected with industry-leading security.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">⚡</div>
+                    <h3>Fast Delivery</h3>
+                    <p>Quick and reliable shipping to get your products to you as fast as possible.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Team -->
+        <section class="team-section">
+            <h2 style="color: #667eea; font-size: 2.5em; margin-bottom: 20px; text-align: center;">Meet Our Team</h2>
+            <p style="text-align: center; color: #666; font-size: 1.1em; margin-bottom: 20px;">
+                Passionate professionals dedicated to bringing you the best tech experience
+            </p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">👨‍💼</div>
+                    <div class="member-name">John Anderson</div>
+                    <div class="member-role">CEO & Founder</div>
+                    <p class="member-bio">Tech enthusiast with 15+ years of experience in e-commerce and retail innovation.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">👩‍💼</div>
+                    <div class="member-name">Sarah Chen</div>
+                    <div class="member-role">Chief Technology Officer</div>
+                    <p class="member-bio">Leading our digital transformation and ensuring cutting-edge tech solutions.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">👨‍💻</div>
+                    <div class="member-name">Michael Rodriguez</div>
+                    <div class="member-role">Head of Product</div>
+                    <p class="member-bio">Curating the best products and maintaining our quality standards.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">👩‍💻</div>
+                    <div class="member-name">Emily Thompson</div>
+                    <div class="member-role">Customer Success Manager</div>
+                    <p class="member-bio">Ensuring every customer has an exceptional shopping experience.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="about-section">
+            <h2>Why Choose TechStore?</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
+                <div>
+                    <h3 style="color: #667eea; font-size: 1.5em; margin-bottom: 15px;">✓ Verified Products</h3>
+                    <p style="color: #666;">Every product is thoroughly tested and verified before reaching our store.</p>
+                </div>
+                <div>
+                    <h3 style="color: #667eea; font-size: 1.5em; margin-bottom: 15px;">✓ Best Prices</h3>
+                    <p style="color: #666;">Competitive pricing with regular deals and discounts for our customers.</p>
+                </div>
+                <div>
+                    <h3 style="color: #667eea; font-size: 1.5em; margin-bottom: 15px;">✓ Expert Support</h3>
+                    <p style="color: #666;">Our knowledgeable team is always ready to help with product selection and support.</p>
+                </div>
+                <div>
+                    <h3 style="color: #667eea; font-size: 1.5em; margin-bottom: 15px;">✓ Easy Returns</h3>
+                    <p style="color: #666;">Hassle-free 30-day return policy on all products, no questions asked.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="cart.html">Cart</a>
+            </div>
+            <p>&copy; 2026 TechStore. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Update cart count
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cartCount').textContent = totalItems;
+        }
+
+        updateCartCount();
+    </script>
+</body>
+</html>
