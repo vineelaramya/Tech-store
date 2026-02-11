@@ -1,18 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-15FBK81FB2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-15FBK81FB2');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purchase Buttons - All Styles</title>
+    <title>ElectroShop - Premium Electronics Store</title>
     <style>
         * {
             margin: 0;
@@ -22,754 +13,719 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
+            line-height: 1.6;
+            color: #333;
         }
 
-        .container {
-            max-width: 1200px;
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
             margin: 0 auto;
-        }
-
-        h1 {
-            text-align: center;
-            color: white;
-            margin-bottom: 50px;
-            font-size: 2.5em;
-        }
-
-        .section {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .section h2 {
-            color: #667eea;
-            margin-bottom: 25px;
-            font-size: 1.8em;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 10px;
-        }
-
-        .button-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-
-        .button-showcase {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            gap: 15px;
+            padding: 0 20px;
         }
 
-        .button-label {
-            font-size: 0.9em;
-            color: #666;
-            font-weight: 600;
-        }
-
-        /* ============================================
-           PURCHASE BUTTON STYLES
-           ============================================ */
-
-        /* 1. Classic Purchase Button */
-        .btn-purchase-classic {
-            padding: 15px 40px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .logo {
             color: white;
-            border: none;
-            border-radius: 30px;
-            font-size: 1.1em;
+            font-size: 1.8em;
             font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-purchase-classic:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
-        }
-
-        .btn-purchase-classic:active {
-            transform: translateY(-1px);
-        }
-
-        /* 2. Buy Now Button with Icon */
-        .btn-buy-now {
-            padding: 15px 35px;
-            background: #4caf50;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
+            text-decoration: none;
+            display: flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
         }
 
-        .btn-buy-now:hover {
-            background: #45a049;
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .cart-icon {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ff4757;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 0.75em;
+            font-weight: bold;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 25px;
+            padding: 8px 15px;
+            gap: 10px;
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            font-size: 1em;
+            width: 250px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            background: white;
+            color: #1a237e;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.6);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
-        /* 3. Add to Cart Button */
-        .btn-add-cart {
-            padding: 15px 35px;
-            background: #ff6b6b;
+        /* Categories Section */
+        .categories {
+            max-width: 1400px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #1a237e;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .category-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .category-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .category-count {
+            color: #666;
+        }
+
+        /* Featured Products */
+        .featured-products {
+            max-width: 1400px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5em;
+            position: relative;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ff4757;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.25em;
+            font-weight: bold;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-category {
+            color: #1a237e;
+            font-size: 0.9em;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .product-rating {
+            color: #ffc107;
+            margin-bottom: 15px;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-price {
+            font-size: 1.8em;
+            color: #1a237e;
+            font-weight: bold;
+        }
+
+        .quick-add {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
             color: white;
             border: none;
             border-radius: 8px;
-            font-size: 1.1em;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            transition: all 0.3s;
         }
 
-        .btn-add-cart:hover {
-            background: #ff5252;
+        .quick-add:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+            box-shadow: 0 5px 15px rgba(26, 35, 126, 0.4);
         }
 
-        /* 4. Animated Purchase Button */
-        .btn-animated {
-            padding: 15px 40px;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1em;
+        /* Features */
+        .features {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 80px 20px;
+        }
+
+        .features-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.4em;
             font-weight: bold;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
+            margin-bottom: 15px;
+            color: #1a237e;
         }
 
-        .btn-animated::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.3);
-            transition: all 0.4s ease;
+        .feature-text {
+            color: #666;
+            line-height: 1.8;
         }
 
-        .btn-animated:hover::before {
-            left: 100%;
-        }
-
-        .btn-animated:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.5);
-        }
-
-        /* 5. 3D Purchase Button */
-        .btn-3d {
-            padding: 15px 40px;
-            background: #667eea;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 6px 0 #4a5fd0, 0 8px 15px rgba(0,0,0,0.3);
-            transition: all 0.1s ease;
-            position: relative;
-            top: 0;
-        }
-
-        .btn-3d:hover {
-            top: 2px;
-            box-shadow: 0 4px 0 #4a5fd0, 0 6px 12px rgba(0,0,0,0.3);
-        }
-
-        .btn-3d:active {
-            top: 6px;
-            box-shadow: 0 0 0 #4a5fd0, 0 2px 8px rgba(0,0,0,0.3);
-        }
-
-        /* 6. Outlined Purchase Button */
-        .btn-outlined {
-            padding: 15px 40px;
-            background: transparent;
-            color: #667eea;
-            border: 3px solid #667eea;
+        /* Newsletter */
+        .newsletter {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
             border-radius: 30px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            text-align: center;
+            color: white;
         }
 
-        .btn-outlined:hover {
-            background: #667eea;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        .newsletter h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
 
-        /* 7. Glowing Purchase Button */
-        .btn-glow {
-            padding: 15px 40px;
-            background: #00d4ff;
-            color: white;
+        .newsletter p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-form input {
+            padding: 15px 25px;
             border: none;
-            border-radius: 10px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
-            animation: glow 2s infinite;
-            transition: all 0.3s ease;
+            border-radius: 30px;
+            font-size: 1em;
+            width: 350px;
+            max-width: 100%;
         }
 
-        @keyframes glow {
-            0%, 100% {
-                box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
-            }
-            50% {
-                box-shadow: 0 0 30px rgba(0, 212, 255, 0.8), 0 0 40px rgba(0, 212, 255, 0.6);
-            }
-        }
-
-        .btn-glow:hover {
-            transform: scale(1.05);
-            background: #00bfea;
-        }
-
-        /* 8. Gradient Border Button */
-        .btn-gradient-border {
+        .newsletter-form button {
             padding: 15px 40px;
             background: white;
-            color: #667eea;
+            color: #1a237e;
             border: none;
             border-radius: 30px;
-            font-size: 1.1em;
             font-weight: bold;
             cursor: pointer;
-            position: relative;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
 
-        .btn-gradient-border::before {
-            content: '';
-            position: absolute;
-            top: -3px;
-            left: -3px;
-            right: -3px;
-            bottom: -3px;
-            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
-            border-radius: 33px;
-            z-index: -1;
-            transition: all 0.3s ease;
-        }
-
-        .btn-gradient-border:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-        }
-
-        /* 9. Split Background Button */
-        .btn-split {
-            padding: 15px 40px;
-            background: #667eea;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            transition: color 0.4s ease;
-        }
-
-        .btn-split::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: white;
-            transition: all 0.4s ease;
-            z-index: -1;
-        }
-
-        .btn-split:hover::before {
-            left: 0;
-        }
-
-        .btn-split:hover {
-            color: #667eea;
-        }
-
-        /* 10. Pulse Button */
-        .btn-pulse {
-            padding: 15px 40px;
-            background: #ff4757;
-            color: white;
-            border: none;
-            border-radius: 30px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            animation: pulse 2s infinite;
-            transition: all 0.3s ease;
-        }
-
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(255, 71, 87, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(255, 71, 87, 0);
-            }
-        }
-
-        .btn-pulse:hover {
+        .newsletter-form button:hover {
             transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
-        /* 11. Loading Button */
-        .btn-loading {
-            padding: 15px 40px;
-            background: #667eea;
+        /* Footer */
+        footer {
+            background: #1a1a1a;
             color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
+            padding: 60px 20px 30px;
         }
 
-        .btn-loading.loading {
-            cursor: not-allowed;
-            opacity: 0.7;
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
-        .btn-loading.loading::after {
-            content: '';
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            top: 50%;
-            right: 20px;
-            margin-top: -8px;
-            border: 2px solid white;
+        .footer-section h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #bbb;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #fff;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: #333;
             border-radius: 50%;
-            border-top-color: transparent;
-            animation: spinner 0.6s linear infinite;
-        }
-
-        @keyframes spinner {
-            to { transform: rotate(360deg); }
-        }
-
-        /* 12. Neon Button */
-        .btn-neon {
-            padding: 15px 40px;
-            background: transparent;
-            color: #00ff88;
-            border: 2px solid #00ff88;
-            border-radius: 10px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            text-shadow: 0 0 10px #00ff88;
-            box-shadow: 0 0 10px #00ff88, inset 0 0 10px rgba(0, 255, 136, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .btn-neon:hover {
-            background: #00ff88;
-            color: #000;
-            text-shadow: none;
-            box-shadow: 0 0 20px #00ff88, 0 0 30px #00ff88, inset 0 0 20px rgba(0, 255, 136, 0.4);
-        }
-
-        /* 13. Icon Button Variations */
-        .btn-icon-left {
-            padding: 15px 35px;
-            background: #764ba2;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            display: inline-flex;
+            display: flex;
             align-items: center;
-            gap: 10px;
-            transition: all 0.3s ease;
+            justify-content: center;
+            font-size: 1.3em;
+            transition: all 0.3s;
         }
 
-        .btn-icon-left:hover {
-            background: #663399;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(118, 75, 162, 0.4);
+        .social-link:hover {
+            background: #1a237e;
+            transform: translateY(-5px);
         }
 
-        /* 14. Success/Confirmation Button */
-        .btn-success {
-            padding: 15px 40px;
-            background: #2ecc71;
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #4caf50;
             color: white;
-            border: none;
+            padding: 18px 30px;
             border-radius: 10px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            display: none;
+            animation: slideIn 0.3s ease-out;
+            z-index: 2000;
+            font-weight: 600;
         }
 
-        .btn-success.clicked::after {
-            content: '✓';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2em;
-            animation: checkmark 0.5s ease;
-        }
-
-        @keyframes checkmark {
+        @keyframes slideIn {
             from {
-                transform: translate(-50%, -50%) scale(0);
+                transform: translateX(400px);
+                opacity: 0;
             }
             to {
-                transform: translate(-50%, -50%) scale(1);
+                transform: translateX(0);
+                opacity: 1;
             }
         }
 
-        /* 15. Swipe Button */
-        .btn-swipe {
-            padding: 15px 40px;
-            background: linear-gradient(90deg, #667eea 50%, #764ba2 50%);
-            background-size: 200% 100%;
-            background-position: right;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
-
-        .btn-swipe:hover {
-            background-position: left;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        /* Code Display */
-        .code-display {
-            background: #2d2d2d;
-            color: #f8f8f2;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 15px;
-            overflow-x: auto;
-        }
-
-        .code-display pre {
-            margin: 0;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-        }
-
-        .copy-btn {
-            background: #667eea;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-            font-size: 0.9em;
-        }
-
-        .copy-btn:hover {
-            background: #5568d3;
+        .toast.show {
+            display: block;
         }
 
         @media (max-width: 768px) {
-            .button-grid {
-                grid-template-columns: 1fr;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
+            .hero h1 { font-size: 2.5em; }
+            .search-bar input { width: 150px; }
+            .nav-links { gap: 1rem; font-size: 0.9em; }
+            .products-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
         }
     </style>
 </head>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5Z6TD8QK');</script>
-<!-- End Google Tag Manager -->
 <body>
-    <div class="container">
-        <h1>🛒 Purchase Button Collection</h1>
-
-        <!-- Classic Buttons -->
-        <div class="section">
-            <h2>Classic Purchase Buttons</h2>
-            <div class="button-grid">
-                <div class="button-showcase">
-                    <button class="btn-purchase-classic">Purchase Now</button>
-                    <span class="button-label">Classic Gradient</span>
-                </div>
-                <div class="button-showcase">
-                    <button class="btn-buy-now">⚡ Buy Now</button>
-                    <span class="button-label">Buy Now with Icon</span>
-                </div>
-                <div class="button-showcase">
-                    <button class="btn-add-cart">🛒 Add to Cart</button>
-                    <span class="button-label">Add to Cart</span>
-                </div>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="ecommerce-home.html" class="logo">⚡ ElectroShop</a>
+            <div class="search-bar">
+                <span>🔍</span>
+                <input type="text" placeholder="Search products..." id="searchInput">
             </div>
-            <div class="code-display">
-                <pre>&lt;button class="btn-purchase-classic"&gt;Purchase Now&lt;/button&gt;
+            <ul class="nav-links">
+                <li><a href="ecommerce-home.html">Home</a></li>
+                <li><a href="ecommerce-shop.html">Shop</a></li>
+                <li><a href="ecommerce-categories.html">Categories</a></li>
+                <li><a href="ecommerce-about.html">About</a></li>
+                <li class="cart-icon">
+                    <a href="ecommerce-cart.html">🛒 Cart</a>
+                    <span class="cart-count" id="cartCount">0</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-&lt;button class="btn-buy-now"&gt;⚡ Buy Now&lt;/button&gt;
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Premium Electronics at Your Fingertips</h1>
+        <p>Discover the latest technology with unbeatable prices and quality</p>
+        <a href="ecommerce-shop.html" class="btn">Shop Now</a>
+    </section>
 
-&lt;button class="btn-add-cart"&gt;🛒 Add to Cart&lt;/button&gt;</pre>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+    <!-- Categories -->
+    <section class="categories">
+        <h2 class="section-title">Shop by Category</h2>
+        <div class="categories-grid">
+            <a href="ecommerce-categories.html?cat=smartphones" class="category-card">
+                <div class="category-icon">📱</div>
+                <div class="category-name">Smartphones</div>
+                <div class="category-count">15 Products</div>
+            </a>
+            <a href="ecommerce-categories.html?cat=laptops" class="category-card">
+                <div class="category-icon">💻</div>
+                <div class="category-name">Laptops</div>
+                <div class="category-count">12 Products</div>
+            </a>
+            <a href="ecommerce-categories.html?cat=audio" class="category-card">
+                <div class="category-icon">🎧</div>
+                <div class="category-name">Audio</div>
+                <div class="category-count">20 Products</div>
+            </a>
+            <a href="ecommerce-categories.html?cat=wearables" class="category-card">
+                <div class="category-icon">⌚</div>
+                <div class="category-name">Wearables</div>
+                <div class="category-count">10 Products</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="products-grid" id="featuredProducts">
+            <!-- Products loaded by JavaScript -->
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="ecommerce-shop.html" class="btn">View All Products</a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🚚</div>
+                <h3 class="feature-title">Free Shipping</h3>
+                <p class="feature-text">Free delivery on all orders over $50. Fast and reliable shipping worldwide.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title">Secure Payment</h3>
+                <p class="feature-text">Your payment information is encrypted and 100% secure with SSL protection.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">↩️</div>
+                <h3 class="feature-title">Easy Returns</h3>
+                <p class="feature-text">30-day hassle-free return policy. Not satisfied? Get a full refund.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3 class="feature-title">24/7 Support</h3>
+                <p class="feature-text">Our customer service team is always ready to help you with any questions.</p>
             </div>
         </div>
+    </section>
 
-        <!-- Animated Buttons -->
-        <div class="section">
-            <h2>Animated Purchase Buttons</h2>
-            <div class="button-grid">
-                <div class="button-showcase">
-                    <button class="btn-animated">Purchase Now</button>
-                    <span class="button-label">Shine Animation</span>
-                </div>
-                <div class="button-showcase">
-                    <button class="btn-3d">Buy Now 3D</button>
-                    <span class="button-label">3D Press Effect</span>
-                </div>
-                <div class="button-showcase">
-                    <button class="btn-pulse">Limited Offer!</button>
-                    <span class="button-label">Pulse Animation</span>
-                </div>
-            </div>
-            <div class="code-display">
-                <pre>&lt;button class="btn-animated"&gt;Purchase Now&lt;/button&gt;
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <h2>Join Our Newsletter</h2>
+        <p>Get exclusive deals, new product announcements, and tech tips!</p>
+        <form class="newsletter-form" onsubmit="return subscribeNewsletter(event)">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
 
-&lt;button class="btn-3d"&gt;Buy Now 3D&lt;/button&gt;
-
-&lt;button class="btn-pulse"&gt;Limited Offer!&lt;/button&gt;</pre>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-            </div>
-        </div>
-
-        <!-- Style Variations -->
-        <div class="section">
-            <h2>Style Variations</h2>
-            <div class="button-grid">
-                <div class="button-showcase">
-                    <button class="btn-outlined">Purchase</button>
-                    <span class="button-label">Outlined</span>
-                </div>
-                <div class="button-showcase">
-                    <button class="btn-glow">Buy Now</button>
-                    <span class="button-label">Glowing</span>
-                </div>
-                <div class="button-showcase">
-                    <button class="btn-gradient-border">Purchase</button>
-                    <span class="button-label">Gradient Border</span>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>⚡ ElectroShop</h3>
+                <p>Your trusted source for premium electronics and technology products.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">🐦</a>
+                    <a href="#" class="social-link">📷</a>
+                    <a href="#" class="social-link">💼</a>
                 </div>
             </div>
-            <div class="code-display">
-                <pre>&lt;button class="btn-outlined"&gt;Purchase&lt;/button&gt;
-
-&lt;button class="btn-glow"&gt;Buy Now&lt;/button&gt;
-
-&lt;button class="btn-gradient-border"&gt;Purchase&lt;/button&gt;</pre>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="ecommerce-home.html">Home</a>
+                <a href="ecommerce-shop.html">Shop</a>
+                <a href="ecommerce-categories.html">Categories</a>
+                <a href="ecommerce-about.html">About Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <a href="#">Contact Us</a>
+                <a href="#">Shipping Info</a>
+                <a href="#">Returns</a>
+                <a href="#">FAQ</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📧 support@electroshop.com</p>
+                <p>📞 +1 (555) 123-4567</p>
+                <p>📍 123 Tech Street, Silicon Valley, CA 94025</p>
             </div>
         </div>
-
-        <!-- Special Effects -->
-        <div class="section">
-            <h2>Special Effects</h2>
-            <div class="button-grid">
-                <div class="button-showcase">
-                    <button class="btn-split">Purchase Now</button>
-                    <span class="button-label">Split Background</span>
-                </div>
-                <div class="button-showcase">
-                    <button class="btn-neon">Buy Now</button>
-                    <span class="button-label">Neon Style</span>
-                </div>
-                <div class="button-showcase">
-                    <button class="btn-swipe">Purchase</button>
-                    <span class="button-label">Swipe Effect</span>
-                </div>
-            </div>
-            <div class="code-display">
-                <pre>&lt;button class="btn-split"&gt;Purchase Now&lt;/button&gt;
-
-&lt;button class="btn-neon"&gt;Buy Now&lt;/button&gt;
-
-&lt;button class="btn-swipe"&gt;Purchase&lt;/button&gt;</pre>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-            </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ElectroShop. All rights reserved.</p>
         </div>
+    </footer>
 
-        <!-- Interactive Buttons -->
-        <div class="section">
-            <h2>Interactive Buttons</h2>
-            <div class="button-grid">
-                <div class="button-showcase">
-                    <button class="btn-icon-left">💳 Checkout</button>
-                    <span class="button-label">Icon Left</span>
-                </div>
-                <div class="button-showcase">
-                    <button class="btn-success" onclick="showSuccess(this)">Confirm Purchase</button>
-                    <span class="button-label">Success State</span>
-                </div>
-                <div class="button-showcase">
-                    <button class="btn-loading" onclick="showLoading(this)">Process Payment</button>
-                    <span class="button-label">Loading State</span>
-                </div>
-            </div>
-            <div class="code-display">
-                <pre>&lt;button class="btn-icon-left"&gt;💳 Checkout&lt;/button&gt;
+    <div class="toast" id="toast">Product added to cart!</div>
 
-&lt;button class="btn-success"&gt;Confirm Purchase&lt;/button&gt;
-
-&lt;button class="btn-loading"&gt;Process Payment&lt;/button&gt;</pre>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-            </div>
-        </div>
-
-        <!-- Complete Example -->
-        <div class="section">
-            <h2>Complete Button Example with JavaScript</h2>
-            <div style="text-align: center; padding: 20px;">
-                <button class="btn-purchase-classic" onclick="handlePurchase()">
-                    Complete Purchase - $99.99
-                </button>
-            </div>
-            <div class="code-display">
-                <pre>&lt;!-- HTML --&gt;
-&lt;button class="btn-purchase-classic" onclick="handlePurchase()"&gt;
-    Complete Purchase - $99.99
-&lt;/button&gt;
-
-&lt;!-- JavaScript --&gt;
-&lt;script&gt;
-function handlePurchase() {
-    // Add your purchase logic here
-    alert('Processing purchase...');
-    
-    // Example: redirect to checkout
-    // window.location.href = 'checkout.html';
-    
-    // Example: add to cart
-    // addToCart(productId, quantity);
-    
-    // Example: show confirmation
-    // showConfirmation();
-}
-&lt;/script&gt;</pre>
-                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-            </div>
-        </div>
-    </div>
-
+    <script src="ecommerce-data.js"></script>
     <script>
-        function copyCode(btn) {
-            const codeBlock = btn.previousElementSibling;
-            const text = codeBlock.textContent;
+        // Update cart count
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cartCount').textContent = totalItems;
+        }
+
+        // Show toast
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        // Add to cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
             
-            navigator.clipboard.writeText(text).then(() => {
-                const originalText = btn.textContent;
-                btn.textContent = 'Copied!';
-                btn.style.background = '#4caf50';
-                
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.style.background = '#667eea';
-                }, 2000);
+            const existingItem = cart.find(item => item.id === productId);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({...product, quantity: 1});
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            showToast('✓ Product added to cart!');
+        }
+
+        // View product details
+        function viewProduct(productId) {
+            window.location.href = `ecommerce-product.html?id=${productId}`;
+        }
+
+        // Load featured products
+        function loadFeaturedProducts() {
+            const container = document.getElementById('featuredProducts');
+            const featured = products.filter(p => p.featured).slice(0, 8);
+            
+            featured.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.onclick = () => viewProduct(product.id);
+                card.innerHTML = `
+                    <div class="product-image">
+                        ${product.icon}
+                        ${product.discount ? `<span class="product-badge">${product.discount}% OFF</span>` : ''}
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">${product.category}</div>
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-description">${product.shortDescription}</div>
+                        <div class="product-rating">${product.rating}</div>
+                        <div class="product-footer">
+                            <div class="product-price">$${product.price.toFixed(2)}</div>
+                            <button class="quick-add" onclick="event.stopPropagation(); addToCart(${product.id})">Add to Cart</button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
             });
         }
 
-        function handlePurchase() {
-            alert('🎉 Purchase functionality triggered!\n\nYou can customize this to:\n- Add to cart\n- Go to checkout\n- Process payment\n- Show confirmation');
+        // Newsletter subscription
+        function subscribeNewsletter(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input').value;
+            showToast('✓ Successfully subscribed to newsletter!');
+            event.target.reset();
+            return false;
         }
 
-        function showSuccess(btn) {
-            btn.classList.add('clicked');
-            btn.textContent = 'Confirmed!';
-            btn.style.background = '#27ae60';
-            
-            setTimeout(() => {
-                btn.classList.remove('clicked');
-                btn.textContent = 'Confirm Purchase';
-                btn.style.background = '#2ecc71';
-            }, 2000);
-        }
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const query = this.value.trim();
+                if (query) {
+                    window.location.href = `ecommerce-shop.html?search=${encodeURIComponent(query)}`;
+                }
+            }
+        });
 
-        function showLoading(btn) {
-            if (btn.classList.contains('loading')) return;
-            
-            const originalText = btn.textContent;
-            btn.classList.add('loading');
-            btn.textContent = 'Processing...';
-            
-            setTimeout(() => {
-                btn.classList.remove('loading');
-                btn.textContent = 'Payment Complete!';
-                btn.style.background = '#4caf50';
-                
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.style.background = '#667eea';
-                }, 2000);
-            }, 3000);
-        }
+        // Initialize
+        updateCartCount();
+        loadFeaturedProducts();
     </script>
 </body>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Z6TD8QK"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 </html>
