@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PVR5Y25PQ4"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-15FBK81FB2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-PVR5Y25PQ4');
+  gtag('config', 'G-15FBK81FB2');
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details - TechStore</title>
+    <title>Purchase Buttons - All Styles</title>
     <style>
         * {
             margin: 0;
@@ -22,1040 +22,743 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
-        }
-
-        nav {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            min-height: 100vh;
+            padding: 40px 20px;
         }
 
-        .nav-container {
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
         }
 
-        .logo {
+        h1 {
+            text-align: center;
             color: white;
-            font-size: 1.8em;
-            font-weight: bold;
-            text-decoration: none;
+            margin-bottom: 50px;
+            font-size: 2.5em;
         }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
-
-        .nav-links a:hover {
-            background: rgba(255,255,255,0.2);
-        }
-
-        .cart-icon {
-            position: relative;
-        }
-
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: #ff4757;
-            color: white;
-            border-radius: 50%;
-            padding: 2px 6px;
-            font-size: 0.75em;
-        }
-
-        /* Breadcrumb */
-        .breadcrumb {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-
-        .breadcrumb a {
-            color: #667eea;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .breadcrumb a:hover {
-            color: #764ba2;
-            text-decoration: underline;
-        }
-
-        .breadcrumb span {
-            margin: 0 10px;
-            color: #999;
-        }
-
-        /* Product Container */
-        .product-container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .product-main {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+        .section {
             background: white;
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        /* Product Images */
-        .product-images {
-            position: sticky;
-            top: 100px;
-            height: fit-content;
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
         }
 
-        .main-image {
-            width: 100%;
-            height: 500px;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10em;
-            margin-bottom: 20px;
-            position: relative;
-            overflow: hidden;
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
         }
 
-        .image-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: #ff4757;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.14em;
-            font-weight: bold;
-        }
-
-        .thumbnail-images {
-            display: flex;
-            gap: 15px;
-            overflow-x: auto;
-        }
-
-        .thumbnail {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5em;
-            cursor: pointer;
-            transition: all 0.3s;
-            border: 3px solid transparent;
-        }
-
-        .thumbnail:hover, .thumbnail.active {
-            border-color: #667eea;
-            transform: scale(1.05);
-        }
-
-        /* Product Info */
-        .product-info {
+        .button-showcase {
             display: flex;
             flex-direction: column;
-        }
-
-        .product-category {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            margin-bottom: 15px;
-            width: fit-content;
-        }
-
-        .product-title {
-            font-size: 2.5em;
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .product-rating {
-            display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 15px;
         }
 
-        .stars {
-            color: #ffc107;
-            font-size: 1.3em;
-        }
-
-        .rating-text {
+        .button-label {
+            font-size: 0.9em;
             color: #666;
+            font-weight: 600;
         }
 
-        .product-price {
-            font-size: 2.5em;
-            color: #667eea;
+        /* ============================================
+           PURCHASE BUTTON STYLES
+           ============================================ */
+
+        /* 1. Classic Purchase Button */
+        .btn-purchase-classic {
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1em;
             font-weight: bold;
-            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
 
-        .original-price {
-            font-size: 0.5em;
-            color: #999;
-            text-decoration: line-through;
-            margin-left: 15px;
+        .btn-purchase-classic:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
         }
 
-        .save-badge {
-            display: inline-block;
+        .btn-purchase-classic:active {
+            transform: translateY(-1px);
+        }
+
+        /* 2. Buy Now Button with Icon */
+        .btn-buy-now {
+            padding: 15px 35px;
             background: #4caf50;
             color: white;
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 0.4em;
-            margin-left: 10px;
-        }
-
-        .stock-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 15px;
-            background: #e8f5e9;
-            color: #2e7d32;
-            border-radius: 8px;
-            font-weight: 600;
-            margin: 20px 0;
-            width: fit-content;
-        }
-
-        .product-description {
-            color: #666;
-            font-size: 1.1em;
-            line-height: 1.8;
-            margin: 20px 0;
-            padding: 20px;
-            background: #f9f9f9;
-            border-radius: 10px;
-        }
-
-        /* Features List */
-        .features-list {
-            margin: 30px 0;
-        }
-
-        .features-list h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-            font-size: 1.3em;
-        }
-
-        .features-list ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .features-list li {
-            padding: 10px 0;
-            padding-left: 30px;
-            position: relative;
-            color: #666;
-        }
-
-        .features-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #4caf50;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-
-        /* Quantity Selector */
-        .quantity-section {
-            margin: 30px 0;
-        }
-
-        .quantity-section label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .quantity-selector {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .qty-btn {
-            width: 40px;
-            height: 40px;
-            border: 2px solid #667eea;
-            background: white;
-            color: #667eea;
-            border-radius: 8px;
-            font-size: 1.3em;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .qty-btn:hover {
-            background: #667eea;
-            color: white;
-        }
-
-        .quantity-display {
-            font-size: 1.3em;
-            font-weight: bold;
-            min-width: 40px;
-            text-align: center;
-        }
-
-        /* Action Buttons */
-        .action-buttons {
-            display: flex;
-            gap: 15px;
-            margin: 30px 0;
-        }
-
-        .btn {
-            flex: 1;
-            padding: 18px;
             border: none;
             border-radius: 10px;
             font-size: 1.1em;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
+            transition: all 0.3s ease;
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
             gap: 10px;
-        }
-
-        .btn-add-cart {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .btn-add-cart:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-buy-now {
-            background: #4caf50;
-            color: white;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
         }
 
         .btn-buy-now:hover {
             background: #45a049;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(76, 175, 80, 0.4);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.6);
         }
 
-        .btn-wishlist {
-            flex: 0 0 60px;
-            background: white;
-            border: 2px solid #667eea;
-            color: #667eea;
-            font-size: 1.5em;
-        }
-
-        .btn-wishlist:hover {
-            background: #667eea;
+        /* 3. Add to Cart Button */
+        .btn-add-cart {
+            padding: 15px 35px;
+            background: #ff6b6b;
             color: white;
-        }
-
-        /* Shipping Info */
-        .shipping-info {
-            background: #fff3cd;
-            border-left: 5px solid #ffc107;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-
-        .shipping-info h4 {
-            color: #856404;
-            margin-bottom: 10px;
-        }
-
-        .shipping-info p {
-            color: #856404;
-            margin: 5px 0;
-        }
-
-        /* Product Tabs */
-        .product-tabs {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
-        }
-
-        .tab-buttons {
-            display: flex;
-            gap: 10px;
-            border-bottom: 2px solid #eee;
-            margin-bottom: 30px;
-        }
-
-        .tab-btn {
-            padding: 15px 30px;
             border: none;
-            background: none;
-            color: #666;
+            border-radius: 8px;
             font-size: 1.1em;
-            font-weight: 600;
-            cursor: pointer;
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s;
-        }
-
-        .tab-btn.active {
-            color: #667eea;
-            border-bottom-color: #667eea;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-            animation: fadeIn 0.5s;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Specifications Table */
-        .specs-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .specs-table tr {
-            border-bottom: 1px solid #eee;
-        }
-
-        .specs-table td {
-            padding: 15px;
-        }
-
-        .specs-table td:first-child {
-            font-weight: 600;
-            color: #333;
-            width: 30%;
-        }
-
-        .specs-table td:last-child {
-            color: #666;
-        }
-
-        /* Reviews */
-        .reviews-summary {
-            display: flex;
-            gap: 40px;
-            margin-bottom: 40px;
-            padding: 30px;
-            background: #f9f9f9;
-            border-radius: 15px;
-        }
-
-        .rating-overview {
-            text-align: center;
-        }
-
-        .big-rating {
-            font-size: 4em;
             font-weight: bold;
-            color: #667eea;
-        }
-
-        .rating-bars {
-            flex: 1;
-        }
-
-        .rating-bar {
-            display: flex;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
             align-items: center;
             gap: 10px;
-            margin: 10px 0;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
         }
 
-        .bar {
-            flex: 1;
-            height: 10px;
-            background: #eee;
-            border-radius: 5px;
+        .btn-add-cart:hover {
+            background: #ff5252;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+
+        /* 4. Animated Purchase Button */
+        .btn-animated {
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .btn-animated::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .btn-animated:hover::before {
+            left: 100%;
+        }
+
+        .btn-animated:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.5);
+        }
+
+        /* 5. 3D Purchase Button */
+        .btn-3d {
+            padding: 15px 40px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 6px 0 #4a5fd0, 0 8px 15px rgba(0,0,0,0.3);
+            transition: all 0.1s ease;
+            position: relative;
+            top: 0;
+        }
+
+        .btn-3d:hover {
+            top: 2px;
+            box-shadow: 0 4px 0 #4a5fd0, 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        .btn-3d:active {
+            top: 6px;
+            box-shadow: 0 0 0 #4a5fd0, 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        /* 6. Outlined Purchase Button */
+        .btn-outlined {
+            padding: 15px 40px;
+            background: transparent;
+            color: #667eea;
+            border: 3px solid #667eea;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outlined:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        /* 7. Glowing Purchase Button */
+        .btn-glow {
+            padding: 15px 40px;
+            background: #00d4ff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            animation: glow 2s infinite;
+            transition: all 0.3s ease;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(0, 212, 255, 0.8), 0 0 40px rgba(0, 212, 255, 0.6);
+            }
+        }
+
+        .btn-glow:hover {
+            transform: scale(1.05);
+            background: #00bfea;
+        }
+
+        /* 8. Gradient Border Button */
+        .btn-gradient-border {
+            padding: 15px 40px;
+            background: white;
+            color: #667eea;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .btn-gradient-border::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            border-radius: 33px;
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+
+        .btn-gradient-border:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        /* 9. Split Background Button */
+        .btn-split {
+            padding: 15px 40px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: color 0.4s ease;
+        }
+
+        .btn-split::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: white;
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn-split:hover::before {
+            left: 0;
+        }
+
+        .btn-split:hover {
+            color: #667eea;
+        }
+
+        /* 10. Pulse Button */
+        .btn-pulse {
+            padding: 15px 40px;
+            background: #ff4757;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+            transition: all 0.3s ease;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(255, 71, 87, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 71, 87, 0);
+            }
+        }
+
+        .btn-pulse:hover {
+            transform: scale(1.05);
+        }
+
+        /* 11. Loading Button */
+        .btn-loading {
+            padding: 15px 40px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .btn-loading.loading {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .btn-loading.loading::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: 50%;
+            right: 20px;
+            margin-top: -8px;
+            border: 2px solid white;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spinner 0.6s linear infinite;
+        }
+
+        @keyframes spinner {
+            to { transform: rotate(360deg); }
+        }
+
+        /* 12. Neon Button */
+        .btn-neon {
+            padding: 15px 40px;
+            background: transparent;
+            color: #00ff88;
+            border: 2px solid #00ff88;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            text-shadow: 0 0 10px #00ff88;
+            box-shadow: 0 0 10px #00ff88, inset 0 0 10px rgba(0, 255, 136, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn-neon:hover {
+            background: #00ff88;
+            color: #000;
+            text-shadow: none;
+            box-shadow: 0 0 20px #00ff88, 0 0 30px #00ff88, inset 0 0 20px rgba(0, 255, 136, 0.4);
+        }
+
+        /* 13. Icon Button Variations */
+        .btn-icon-left {
+            padding: 15px 35px;
+            background: #764ba2;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-icon-left:hover {
+            background: #663399;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(118, 75, 162, 0.4);
+        }
+
+        /* 14. Success/Confirmation Button */
+        .btn-success {
+            padding: 15px 40px;
+            background: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
             overflow: hidden;
         }
 
-        .bar-fill {
-            height: 100%;
-            background: #ffc107;
-            transition: width 0.5s;
+        .btn-success.clicked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+            animation: checkmark 0.5s ease;
         }
 
-        .review-item {
-            padding: 25px;
-            border: 1px solid #eee;
-            border-radius: 15px;
-            margin-bottom: 20px;
+        @keyframes checkmark {
+            from {
+                transform: translate(-50%, -50%) scale(0);
+            }
+            to {
+                transform: translate(-50%, -50%) scale(1);
+            }
         }
 
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-
-        .reviewer-name {
+        /* 15. Swipe Button */
+        .btn-swipe {
+            padding: 15px 40px;
+            background: linear-gradient(90deg, #667eea 50%, #764ba2 50%);
+            background-size: 200% 100%;
+            background-position: right;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
             font-weight: bold;
-            color: #333;
+            cursor: pointer;
+            transition: all 0.4s ease;
         }
 
-        .review-date {
-            color: #999;
+        .btn-swipe:hover {
+            background-position: left;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Code Display */
+        .code-display {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            overflow-x: auto;
+        }
+
+        .code-display pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
             font-size: 0.9em;
         }
 
-        .review-rating {
-            color: #ffc107;
-            margin-bottom: 10px;
-        }
-
-        .review-text {
-            color: #666;
-            line-height: 1.8;
-        }
-
-        footer {
-            background: #333;
+        .copy-btn {
+            background: #667eea;
             color: white;
-            padding: 40px 20px;
-            text-align: center;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 0.9em;
         }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #667eea;
-        }
-
-        /* Toast */
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #4caf50;
-            color: white;
-            padding: 15px 25px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            display: none;
-            animation: slideIn 0.3s ease-out;
-            z-index: 2000;
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateX(400px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        .toast.show {
-            display: block;
-        }
-
-        @media (max-width: 968px) {
-            .product-main {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .product-images {
-                position: static;
-            }
-
-            .action-buttons {
-                flex-direction: column;
-            }
-
-            .btn-wishlist {
-                flex: 1;
-            }
+        .copy-btn:hover {
+            background: #5568d3;
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                gap: 1rem;
+            .button-grid {
+                grid-template-columns: 1fr;
             }
 
-            .product-title {
-                font-size: 1.8em;
-            }
-
-            .product-price {
+            h1 {
                 font-size: 2em;
-            }
-
-            .tab-buttons {
-                overflow-x: auto;
-            }
-
-            .reviews-summary {
-                flex-direction: column;
-                gap: 20px;
             }
         }
     </style>
 </head>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5Z6TD8QK');</script>
-<!-- End Google Tag Manager -->
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">🛒 TechStore</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li class="cart-icon">
-                    <a href="cart.html">🛒 Cart</a>
-                    <span class="cart-count" id="cartCount">0</span>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <div class="container">
+        <h1>🛒 Purchase Button Collection</h1>
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-        <a href="index.html">Home</a>
-        <span>›</span>
-        <a href="products.html">Products</a>
-        <span>›</span>
-        <span id="breadcrumbProduct">Product</span>
-    </div>
-
-    <!-- Product Container -->
-    <div class="product-container">
-        <!-- Main Product Section -->
-        <div class="product-main">
-            <!-- Product Images -->
-            <div class="product-images">
-                <div class="main-image" id="mainImage">
-                    🎧
-                    <span class="image-badge">20% OFF</span>
+        <!-- Classic Buttons -->
+        <div class="section">
+            <h2>Classic Purchase Buttons</h2>
+            <div class="button-grid">
+                <div class="button-showcase">
+                    <button class="btn-purchase-classic">Purchase Now</button>
+                    <span class="button-label">Classic Gradient</span>
                 </div>
-                <div class="thumbnail-images">
-                    <div class="thumbnail active" onclick="changeImage('🎧')">🎧</div>
-                    <div class="thumbnail" onclick="changeImage('🎵')">🎵</div>
-                    <div class="thumbnail" onclick="changeImage('🔊')">🔊</div>
-                    <div class="thumbnail" onclick="changeImage('📦')">📦</div>
+                <div class="button-showcase">
+                    <button class="btn-buy-now">⚡ Buy Now</button>
+                    <span class="button-label">Buy Now with Icon</span>
+                </div>
+                <div class="button-showcase">
+                    <button class="btn-add-cart">🛒 Add to Cart</button>
+                    <span class="button-label">Add to Cart</span>
                 </div>
             </div>
+            <div class="code-display">
+                <pre>&lt;button class="btn-purchase-classic"&gt;Purchase Now&lt;/button&gt;
 
-            <!-- Product Info -->
-            <div class="product-info">
-                <span class="product-category" id="productCategory">Audio</span>
-                <h1 class="product-title" id="productTitle">Wireless Headphones</h1>
-                
-                <div class="product-rating">
-                    <span class="stars" id="productStars">⭐⭐⭐⭐⭐</span>
-                    <span class="rating-text">(4.8/5 - 256 reviews)</span>
-                </div>
+&lt;button class="btn-buy-now"&gt;⚡ Buy Now&lt;/button&gt;
 
-                <div class="product-price">
-                    $<span id="productPrice">79.99</span>
-                    <span class="original-price">$99.99</span>
-                    <span class="save-badge">Save $20</span>
-                </div>
-
-                <div class="stock-status">
-                    <span>✓</span> In Stock - Ready to Ship
-                </div>
-
-                <div class="product-description" id="productDescription">
-                    Experience premium sound quality with our top-of-the-line wireless headphones. 
-                    Featuring advanced noise-cancellation technology, 30-hour battery life, and 
-                    comfortable over-ear design. Perfect for music lovers, travelers, and 
-                    professionals who demand the best audio experience.
-                </div>
-
-                <div class="features-list">
-                    <h3>Key Features:</h3>
-                    <ul id="featuresList">
-                        <li>Active Noise Cancellation (ANC)</li>
-                        <li>30-Hour Battery Life</li>
-                        <li>Bluetooth 5.0 Connectivity</li>
-                        <li>Premium Comfort Ear Cushions</li>
-                        <li>Built-in Microphone for Calls</li>
-                        <li>Foldable Design with Travel Case</li>
-                    </ul>
-                </div>
-
-                <div class="quantity-section">
-                    <label>Quantity:</label>
-                    <div class="quantity-selector">
-                        <button class="qty-btn" onclick="changeQuantity(-1)">-</button>
-                        <span class="quantity-display" id="quantity">1</span>
-                        <button class="qty-btn" onclick="changeQuantity(1)">+</button>
-                    </div>
-                </div>
-
-                <div class="action-buttons">
-                    <button class="btn btn-add-cart" onclick="addToCart()">
-                        🛒 Add to Cart
-                    </button>
-                    <button class="btn btn-buy-now" onclick="buyNow()">
-                        ⚡ Buy Now
-                    </button>
-                    <button class="btn btn-wishlist" onclick="addToWishlist()">
-                        ♥
-                    </button>
-                </div>
-
-                <div class="shipping-info">
-                    <h4>🚚 Shipping Information</h4>
-                    <p>✓ Free shipping on orders over $50</p>
-                    <p>✓ Estimated delivery: 5-7 business days</p>
-                    <p>✓ 30-day hassle-free returns</p>
-                    <p>✓ 1-year manufacturer warranty included</p>
-                </div>
+&lt;button class="btn-add-cart"&gt;🛒 Add to Cart&lt;/button&gt;</pre>
+                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
             </div>
         </div>
 
-        <!-- Product Tabs -->
-        <div class="product-tabs">
-            <div class="tab-buttons">
-                <button class="tab-btn active" onclick="openTab('description')">Description</button>
-                <button class="tab-btn" onclick="openTab('specifications')">Specifications</button>
-                <button class="tab-btn" onclick="openTab('reviews')">Reviews</button>
+        <!-- Animated Buttons -->
+        <div class="section">
+            <h2>Animated Purchase Buttons</h2>
+            <div class="button-grid">
+                <div class="button-showcase">
+                    <button class="btn-animated">Purchase Now</button>
+                    <span class="button-label">Shine Animation</span>
+                </div>
+                <div class="button-showcase">
+                    <button class="btn-3d">Buy Now 3D</button>
+                    <span class="button-label">3D Press Effect</span>
+                </div>
+                <div class="button-showcase">
+                    <button class="btn-pulse">Limited Offer!</button>
+                    <span class="button-label">Pulse Animation</span>
+                </div>
             </div>
+            <div class="code-display">
+                <pre>&lt;button class="btn-animated"&gt;Purchase Now&lt;/button&gt;
 
-            <!-- Description Tab -->
-            <div id="description" class="tab-content active">
-                <h2 style="color: #667eea; margin-bottom: 20px;">Product Description</h2>
-                <p style="line-height: 1.8; color: #666; margin-bottom: 20px;">
-                    Immerse yourself in crystal-clear audio with our premium wireless headphones. 
-                    Engineered with cutting-edge technology, these headphones deliver an 
-                    exceptional listening experience whether you're commuting, working, or relaxing at home.
-                </p>
-                <p style="line-height: 1.8; color: #666; margin-bottom: 20px;">
-                    The advanced Active Noise Cancellation (ANC) technology blocks out unwanted ambient 
-                    noise, allowing you to focus on your music, podcasts, or calls. With an impressive 
-                    30-hour battery life, you can enjoy uninterrupted audio throughout your day.
-                </p>
-                <p style="line-height: 1.8; color: #666;">
-                    Designed for comfort and durability, the premium ear cushions and adjustable headband 
-                    ensure a perfect fit for extended wear. The foldable design makes them perfect for 
-                    travel, and the included carrying case protects your investment wherever you go.
-                </p>
+&lt;button class="btn-3d"&gt;Buy Now 3D&lt;/button&gt;
+
+&lt;button class="btn-pulse"&gt;Limited Offer!&lt;/button&gt;</pre>
+                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
             </div>
+        </div>
 
-            <!-- Specifications Tab -->
-            <div id="specifications" class="tab-content">
-                <h2 style="color: #667eea; margin-bottom: 20px;">Technical Specifications</h2>
-                <table class="specs-table">
-                    <tr>
-                        <td>Model</td>
-                        <td>TechStore Pro ANC-3000</td>
-                    </tr>
-                    <tr>
-                        <td>Driver Size</td>
-                        <td>40mm Dynamic Drivers</td>
-                    </tr>
-                    <tr>
-                        <td>Frequency Response</td>
-                        <td>20Hz - 20kHz</td>
-                    </tr>
-                    <tr>
-                        <td>Impedance</td>
-                        <td>32 Ohm</td>
-                    </tr>
-                    <tr>
-                        <td>Bluetooth Version</td>
-                        <td>5.0</td>
-                    </tr>
-                    <tr>
-                        <td>Battery Life</td>
-                        <td>30 hours (ANC on), 40 hours (ANC off)</td>
-                    </tr>
-                    <tr>
-                        <td>Charging Time</td>
-                        <td>2 hours (USB-C fast charging)</td>
-                    </tr>
-                    <tr>
-                        <td>Weight</td>
-                        <td>250g</td>
-                    </tr>
-                    <tr>
-                        <td>Wireless Range</td>
-                        <td>Up to 10 meters</td>
-                    </tr>
-                    <tr>
-                        <td>Color Options</td>
-                        <td>Black, Silver, Blue, Red</td>
-                    </tr>
-                    <tr>
-                        <td>What's in the Box</td>
-                        <td>Headphones, USB-C Cable, 3.5mm Audio Cable, Carrying Case, User Manual</td>
-                    </tr>
-                </table>
+        <!-- Style Variations -->
+        <div class="section">
+            <h2>Style Variations</h2>
+            <div class="button-grid">
+                <div class="button-showcase">
+                    <button class="btn-outlined">Purchase</button>
+                    <span class="button-label">Outlined</span>
+                </div>
+                <div class="button-showcase">
+                    <button class="btn-glow">Buy Now</button>
+                    <span class="button-label">Glowing</span>
+                </div>
+                <div class="button-showcase">
+                    <button class="btn-gradient-border">Purchase</button>
+                    <span class="button-label">Gradient Border</span>
+                </div>
             </div>
+            <div class="code-display">
+                <pre>&lt;button class="btn-outlined"&gt;Purchase&lt;/button&gt;
 
-            <!-- Reviews Tab -->
-            <div id="reviews" class="tab-content">
-                <h2 style="color: #667eea; margin-bottom: 20px;">Customer Reviews</h2>
-                
-                <div class="reviews-summary">
-                    <div class="rating-overview">
-                        <div class="big-rating">4.8</div>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p style="color: #666;">Based on 256 reviews</p>
-                    </div>
-                    <div class="rating-bars">
-                        <div class="rating-bar">
-                            <span>5 ⭐</span>
-                            <div class="bar"><div class="bar-fill" style="width: 85%"></div></div>
-                            <span>85%</span>
-                        </div>
-                        <div class="rating-bar">
-                            <span>4 ⭐</span>
-                            <div class="bar"><div class="bar-fill" style="width: 10%"></div></div>
-                            <span>10%</span>
-                        </div>
-                        <div class="rating-bar">
-                            <span>3 ⭐</span>
-                            <div class="bar"><div class="bar-fill" style="width: 3%"></div></div>
-                            <span>3%</span>
-                        </div>
-                        <div class="rating-bar">
-                            <span>2 ⭐</span>
-                            <div class="bar"><div class="bar-fill" style="width: 1%"></div></div>
-                            <span>1%</span>
-                        </div>
-                        <div class="rating-bar">
-                            <span>1 ⭐</span>
-                            <div class="bar"><div class="bar-fill" style="width: 1%"></div></div>
-                            <span>1%</span>
-                        </div>
-                    </div>
-                </div>
+&lt;button class="btn-glow"&gt;Buy Now&lt;/button&gt;
 
-                <div class="review-item">
-                    <div class="review-header">
-                        <span class="reviewer-name">John Smith</span>
-                        <span class="review-date">January 15, 2026</span>
-                    </div>
-                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
-                    <p class="review-text">
-                        Absolutely fantastic headphones! The noise cancellation is incredible and the 
-                        sound quality is top-notch. Battery life easily lasts me through long flights. 
-                        Highly recommended for anyone looking for premium wireless headphones.
-                    </p>
-                </div>
+&lt;button class="btn-gradient-border"&gt;Purchase&lt;/button&gt;</pre>
+                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+            </div>
+        </div>
 
-                <div class="review-item">
-                    <div class="review-header">
-                        <span class="reviewer-name">Sarah Johnson</span>
-                        <span class="review-date">January 10, 2026</span>
-                    </div>
-                    <div class="review-rating">⭐⭐⭐⭐⭐</div>
-                    <p class="review-text">
-                        Best purchase I've made this year! Super comfortable for all-day wear, and the 
-                        audio quality is amazing. The ANC feature works great in noisy environments. 
-                        Worth every penny!
-                    </p>
+        <!-- Special Effects -->
+        <div class="section">
+            <h2>Special Effects</h2>
+            <div class="button-grid">
+                <div class="button-showcase">
+                    <button class="btn-split">Purchase Now</button>
+                    <span class="button-label">Split Background</span>
                 </div>
+                <div class="button-showcase">
+                    <button class="btn-neon">Buy Now</button>
+                    <span class="button-label">Neon Style</span>
+                </div>
+                <div class="button-showcase">
+                    <button class="btn-swipe">Purchase</button>
+                    <span class="button-label">Swipe Effect</span>
+                </div>
+            </div>
+            <div class="code-display">
+                <pre>&lt;button class="btn-split"&gt;Purchase Now&lt;/button&gt;
 
-                <div class="review-item">
-                    <div class="review-header">
-                        <span class="reviewer-name">Michael Chen</span>
-                        <span class="review-date">December 28, 2025</span>
-                    </div>
-                    <div class="review-rating">⭐⭐⭐⭐</div>
-                    <p class="review-text">
-                        Great headphones overall. Sound quality is excellent and they're very comfortable. 
-                        Only minor complaint is they could be a bit lighter, but that's really nitpicking. 
-                        Very happy with this purchase.
-                    </p>
+&lt;button class="btn-neon"&gt;Buy Now&lt;/button&gt;
+
+&lt;button class="btn-swipe"&gt;Purchase&lt;/button&gt;</pre>
+                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+            </div>
+        </div>
+
+        <!-- Interactive Buttons -->
+        <div class="section">
+            <h2>Interactive Buttons</h2>
+            <div class="button-grid">
+                <div class="button-showcase">
+                    <button class="btn-icon-left">💳 Checkout</button>
+                    <span class="button-label">Icon Left</span>
                 </div>
+                <div class="button-showcase">
+                    <button class="btn-success" onclick="showSuccess(this)">Confirm Purchase</button>
+                    <span class="button-label">Success State</span>
+                </div>
+                <div class="button-showcase">
+                    <button class="btn-loading" onclick="showLoading(this)">Process Payment</button>
+                    <span class="button-label">Loading State</span>
+                </div>
+            </div>
+            <div class="code-display">
+                <pre>&lt;button class="btn-icon-left"&gt;💳 Checkout&lt;/button&gt;
+
+&lt;button class="btn-success"&gt;Confirm Purchase&lt;/button&gt;
+
+&lt;button class="btn-loading"&gt;Process Payment&lt;/button&gt;</pre>
+                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+            </div>
+        </div>
+
+        <!-- Complete Example -->
+        <div class="section">
+            <h2>Complete Button Example with JavaScript</h2>
+            <div style="text-align: center; padding: 20px;">
+                <button class="btn-purchase-classic" onclick="handlePurchase()">
+                    Complete Purchase - $99.99
+                </button>
+            </div>
+            <div class="code-display">
+                <pre>&lt;!-- HTML --&gt;
+&lt;button class="btn-purchase-classic" onclick="handlePurchase()"&gt;
+    Complete Purchase - $99.99
+&lt;/button&gt;
+
+&lt;!-- JavaScript --&gt;
+&lt;script&gt;
+function handlePurchase() {
+    // Add your purchase logic here
+    alert('Processing purchase...');
+    
+    // Example: redirect to checkout
+    // window.location.href = 'checkout.html';
+    
+    // Example: add to cart
+    // addToCart(productId, quantity);
+    
+    // Example: show confirmation
+    // showConfirmation();
+}
+&lt;/script&gt;</pre>
+                <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
             </div>
         </div>
     </div>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="products.html">Products</a>
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
-                <a href="cart.html">Cart</a>
-            </div>
-            <p>&copy; 2026 TechStore. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <div class="toast" id="toast">Product added to cart!</div>
 
     <script>
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        let currentQuantity = 1;
-        
-        // Product data
-        const product = {
-            id: 1,
-            name: "Wireless Headphones",
-            price: 79.99,
-            description: "Premium noise-cancelling wireless headphones",
-            icon: "🎧",
-            category: "audio"
-        };
-
-        function updateCartCount() {
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            document.getElementById('cartCount').textContent = totalItems;
-        }
-
-        function changeImage(icon) {
-            document.getElementById('mainImage').innerHTML = icon + '<span class="image-badge">20% OFF</span>';
-            document.querySelectorAll('.thumbnail').forEach(thumb => {
-                thumb.classList.remove('active');
+        function copyCode(btn) {
+            const codeBlock = btn.previousElementSibling;
+            const text = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = btn.textContent;
+                btn.textContent = 'Copied!';
+                btn.style.background = '#4caf50';
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '#667eea';
+                }, 2000);
             });
-            event.target.classList.add('active');
         }
 
-        function changeQuantity(change) {
-            currentQuantity = Math.max(1, currentQuantity + change);
-            document.getElementById('quantity').textContent = currentQuantity;
+        function handlePurchase() {
+            alert('🎉 Purchase functionality triggered!\n\nYou can customize this to:\n- Add to cart\n- Go to checkout\n- Process payment\n- Show confirmation');
         }
 
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.classList.add('show');
+        function showSuccess(btn) {
+            btn.classList.add('clicked');
+            btn.textContent = 'Confirmed!';
+            btn.style.background = '#27ae60';
+            
             setTimeout(() => {
-                toast.classList.remove('show');
+                btn.classList.remove('clicked');
+                btn.textContent = 'Confirm Purchase';
+                btn.style.background = '#2ecc71';
+            }, 2000);
+        }
+
+        function showLoading(btn) {
+            if (btn.classList.contains('loading')) return;
+            
+            const originalText = btn.textContent;
+            btn.classList.add('loading');
+            btn.textContent = 'Processing...';
+            
+            setTimeout(() => {
+                btn.classList.remove('loading');
+                btn.textContent = 'Payment Complete!';
+                btn.style.background = '#4caf50';
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '#667eea';
+                }, 2000);
             }, 3000);
         }
-
-        function addToCart() {
-            const existingItem = cart.find(item => item.id === product.id);
-
-            if (existingItem) {
-                existingItem.quantity += currentQuantity;
-            } else {
-                cart.push({...product, quantity: currentQuantity});
-            }
-
-            localStorage.setItem('cart', JSON.stringify(cart));
-            updateCartCount();
-            showToast(`${currentQuantity} item(s) added to cart!`);
-        }
-
-        function buyNow() {
-            addToCart();
-            setTimeout(() => {
-                window.location.href = 'checkout.html';
-            }, 500);
-        }
-
-        function addToWishlist() {
-            showToast('Added to wishlist! ♥');
-        }
-
-        function openTab(tabName) {
-            // Hide all tabs
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.remove('active');
-            });
-
-            // Remove active class from all buttons
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-
-            // Show selected tab
-            document.getElementById(tabName).classList.add('active');
-            event.target.classList.add('active');
-        }
-
-        // Initialize
-        updateCartCount();
     </script>
 </body>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Z6TD8QK"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 </html>
